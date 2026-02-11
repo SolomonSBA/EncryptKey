@@ -9,8 +9,8 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
-const heroImage = 'https://d64gsuwffb70l.cloudfront.net/69833e6536dcbf57940a4687_1770208957086_e95c52da.jpg';
-const featureImage = 'https://d64gsuwffb70l.cloudfront.net/69833e6536dcbf57940a4687_1770208990320_52902cc4.jpg';
+import heroImage from '@/assets/heroImage.jpg';
+import featureImage from '@/assets/featureImage.jpg';
 
 const features = [
   {
@@ -39,11 +39,11 @@ const stats = [
   { value: '99.99%', label: 'Uptime SLA' },
   { value: '500M+', label: 'Transactions Secured' },
   { value: '<10ms', label: 'Average Latency' },
-  { value: '50+', label: 'Enterprise Clients' },
+  { value: 'Several', label: 'clients' },
 ];
 
 const trustedBy = [
-  'FinTech Corp', 'PaySecure', 'GlobalBank', 'CryptoTrust', 'SecurePay', 'DataVault'
+  // 'GTBANK'
 ];
 
 const HomePage: React.FC = () => {
@@ -63,24 +63,24 @@ const HomePage: React.FC = () => {
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 animate-fade-in">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-sm text-gray-300">Now SOC 2 Type II Certified</span>
+                <span className="text-sm text-white/90">Now SOC 2 Type II Certified</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6 animate-slide-in">
-                Enterprise-Grade encryption for{' '}
+                <span className="whitespace-nowrap">Enterprise-Grade</span> encryption for{' '}
                 <span className="bg-gradient-to-r from-encrypt-blue to-encrypt-magenta bg-clip-text text-transparent">
                   modern payment systems at scale
                 </span>
               </h1>
               
-              <p className="text-lg lg:text-xl text-gray-400 mb-4 max-w-xl mx-auto lg:mx-0 animate-slide-in" style={{ animationDelay: '0.1s' }}>
+              <p className="text-lg lg:text-xl text-white/90 mb-4 max-w-xl mx-auto lg:mx-0 animate-slide-in" style={{ animationDelay: '0.1s' }}>
                 EncryptKey provides encryption-as-a-service for financial institutions and payment platforms operating in regulated, high-availability environments.
               </p>
-              <p className="text-base lg:text-lg text-gray-500 mb-6 max-w-xl mx-auto lg:mx-0 animate-slide-in" style={{ animationDelay: '0.12s' }}>
+              <p className="text-base lg:text-lg text-white/85 mb-6 max-w-xl mx-auto lg:mx-0 animate-slide-in" style={{ animationDelay: '0.12s' }}>
                 EncryptKey is purpose-built for institutions where cryptographic security is mission-critical and operational failure is not an option. It provides a centralized, policy-driven platform for encryption and key lifecycle management across ATM networks, payment processors, switches, and transaction platforms.
               </p>
-              <p className="text-base lg:text-lg text-gray-500 mb-8 max-w-xl mx-auto lg:mx-0 animate-slide-in" style={{ animationDelay: '0.14s' }}>
-                By isolating cryptographic operations from application logic, EncryptKey removes encryption from day-to-day development concerns while strengthening institutional control. Keys are generated, distributed, accessed, and audited through controlled workflows backed by HSMs and role-based access. This reduces operational risk, simplifies regulatory compliance, and ensures sensitive payment data remains protected across internal systems, partner integrations, and third-party networks. 
+              <p className="text-base lg:text-lg text-white/85 mb-8 max-w-xl mx-auto lg:mx-0 animate-slide-in" style={{ animationDelay: '0.14s' }}>
+                By isolating cryptographic operations from application logic, EncryptKey removes encryption from day-to-day development concerns while strengthening institutional control. Keys are generated, distributed, accessed, and audited through controlled workflows backed by HSMs and role-based access. This reduces operational risk, simplifies regulatory compliance, and ensures sensitive payment data remains protected across internal systems, partner integrations, and third-party networks.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start animate-slide-in" style={{ animationDelay: '0.2s' }}>
@@ -143,7 +143,7 @@ const HomePage: React.FC = () => {
                 <div className="text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-encrypt-blue to-encrypt-magenta bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-400 text-sm lg:text-base">{stat.label}</div>
+                <div className="text-white/80 text-sm lg:text-base">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -153,14 +153,14 @@ const HomePage: React.FC = () => {
       {/* Trusted By Section */}
       <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
+            <p className="text-center text-white/80 text-sm uppercase tracking-wider mb-8">
             Trusted by leading financial institutions
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
             {trustedBy.map((company, index) => (
               <div
                 key={index}
-                className="text-xl lg:text-2xl font-bold text-gray-600 hover:text-gray-400 transition-colors cursor-default"
+                className="text-xl lg:text-2xl font-bold text-white/70 hover:text-white transition-colors cursor-default"
               >
                 {company}
               </div>
@@ -176,7 +176,7 @@ const HomePage: React.FC = () => {
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">
               Designed for security teams. Trusted by operations. Invisible to developers.
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
               Centralized encryption and key lifecycle management that integrates with your payment and transaction flows.
             </p>
           </div>
@@ -191,7 +191,7 @@ const HomePage: React.FC = () => {
                   <feature.icon className="w-6 h-6 text-encrypt-blue" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-3">{feature.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+                <p className="text-white/90 text-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -216,8 +216,8 @@ const HomePage: React.FC = () => {
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
                 A security foundation that scales
               </h2>
-              <p className="text-lg text-gray-400 mb-8">
-                EncryptKey centralizes encryption and key lifecycle management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows. Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems reducing operational risk, simplifying regulatory compliance, and ensuring sensitive payment data remains protected.
+              <p className="text-lg text-white/90 mb-8">
+                EncryptKey centralizes encryption and key lifecycle management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows. Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems—reducing operational risk, simplifying regulatory compliance, and ensuring sensitive payment data remains protected.
               </p>
               
               <ul className="space-y-4 mb-8">
@@ -229,7 +229,7 @@ const HomePage: React.FC = () => {
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-encrypt-blue mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-300">{item}</span>
+                    <span className="text-white/90">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -259,7 +259,7 @@ const HomePage: React.FC = () => {
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
                 Ready to secure your payment infrastructure?
               </h2>
-              <p className="text-lg lg:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
                 Join leading financial institutions that trust EncryptKey for their encryption needs.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

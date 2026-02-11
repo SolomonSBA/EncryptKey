@@ -8,11 +8,10 @@ import {
 import { Button } from '@/components/ui/button';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-
-const featureImage1 = 'https://d64gsuwffb70l.cloudfront.net/69833e6536dcbf57940a4687_1770208973207_788aabe8.jpg';
-const featureImage2 = 'https://d64gsuwffb70l.cloudfront.net/69833e6536dcbf57940a4687_1770208974818_b3a9c478.jpg';
-const featureImage3 = 'https://d64gsuwffb70l.cloudfront.net/69833e6536dcbf57940a4687_1770208974162_8a906d99.jpg';
-const featureImage4 = 'https://d64gsuwffb70l.cloudfront.net/69833e6536dcbf57940a4687_1770209009764_98afa103.jpg';
+import featureImage1 from '@/assets/Image1.jpg';
+import featureImage2 from '@/assets/Image2.jpg';
+import featureImage3 from '@/assets/Image3.jpg';
+import featureImage4 from '@/assets/featureImage.jpg';
 
 const mainFeatures = [
   {
@@ -110,17 +109,17 @@ const FeaturesPage: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
             <Zap className="w-4 h-4 text-encrypt-magenta" />
-            <span className="text-sm text-gray-300">Enterprise Features</span>
+            <span className="text-sm text-white/90">Enterprise Features</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
             Designed for security teams. Trusted by operations. Invisible to developers.
           </h1>
-          <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto mb-8">
+          <p className="text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto mb-8">
             EncryptKey centralizes encryption and key management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows.
           </p>
           
-          <p className="text-lg text-gray-500 max-w-4xl mx-auto mb-8">
+          <p className="text-lg text-white/85 max-w-4xl mx-auto mb-8">
             Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems. Key lifecycles generation, approval, assignment, access, and loading are automated and governed through controlled workflows, eliminating manual handling and reducing operational overhead. Every action is logged, auditable, and aligned with regulatory expectations for dual control and segregation of duties. An API-first architecture ensures predictable behaviour and clean integration with payment platforms, switches, and processing environments.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -165,7 +164,7 @@ const FeaturesPage: React.FC = () => {
                   <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                     {feature.title}
                   </h2>
-                  <p className="text-lg text-gray-400 mb-8">
+                  <p className="text-lg text-white/90 mb-8">
                     {feature.description}
                   </p>
                   
@@ -173,7 +172,7 @@ const FeaturesPage: React.FC = () => {
                     {feature.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-center gap-3">
                         <CheckCircle className="w-5 h-5 text-encrypt-magenta flex-shrink-0" />
-                        <span className="text-gray-300">{benefit}</span>
+                        <span className="text-white/90">{benefit}</span>
                       </li>
                     ))}
                   </ul>
@@ -215,7 +214,7 @@ const FeaturesPage: React.FC = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               And much more
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Everything you need to secure your payment infrastructure
             </p>
           </div>
@@ -230,7 +229,7 @@ const FeaturesPage: React.FC = () => {
                   <feature.icon className="w-6 h-6 text-encrypt-blue" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-3">{feature.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+                <p className="text-white/90 text-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -243,7 +242,7 @@ const FeaturesPage: React.FC = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to get started?
           </h2>
-          <p className="text-lg text-gray-400 mb-8">
+          <p className="text-lg text-white/90 mb-8">
             See how EncryptKey can transform your security infrastructure.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

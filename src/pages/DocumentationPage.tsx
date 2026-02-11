@@ -10,8 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-
-const docImage = 'https://d64gsuwffb70l.cloudfront.net/69833e6536dcbf57940a4687_1770209083185_a01fb72f.jpg';
+import docImage from '@/assets/docImage.jpg';
 
 const quickLinks = [
   { icon: Book, title: 'Getting Started', description: 'Learn the basics of EncryptKey', href: '#getting-started' },
@@ -117,13 +116,13 @@ const DocumentationPage: React.FC = () => {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
                 <Book className="w-4 h-4 text-encrypt-magenta" />
-                <span className="text-sm text-gray-300">Documentation</span>
+                <span className="text-sm text-white/90">Documentation</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
                 APIs built for secure encryption and key management
               </h1>
-              <p className="text-xl text-gray-400 mb-8">
+              <p className="text-xl text-white/90 mb-8">
                 EncryptKey provides clear, production-ready APIs designed for regulated payment environments. Integration patterns are consistent, responses are predictable, and security controls are enforced by design—allowing teams to integrate confidently without managing cryptography themselves.
               </p>
               
@@ -171,7 +170,7 @@ const DocumentationPage: React.FC = () => {
                   <h3 className="text-white font-medium mb-1 group-hover:text-encrypt-blue transition-colors">
                     {link.title}
                   </h3>
-                  <p className="text-gray-500 text-sm">{link.description}</p>
+                  <p className="text-white/80 text-sm">{link.description}</p>
                 </div>
                 <ChevronRight className="w-5 h-5 text-gray-600 group-hover:text-encrypt-blue transition-colors flex-shrink-0" />
               </a>
@@ -187,7 +186,7 @@ const DocumentationPage: React.FC = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               Get started in minutes
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Integrate EncryptKey into your application with just a few lines of code
             </p>
           </div>
@@ -229,12 +228,12 @@ const DocumentationPage: React.FC = () => {
                 <TabsContent key={lang} value={lang}>
                   <div className="relative rounded-xl bg-[#0d0d12] border border-white/10 overflow-hidden">
                     <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
-                      <span className="text-sm text-gray-400">Example: Encrypt Data</span>
+                      <span className="text-sm text-white/80">Example: Encrypt Data</span>
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={() => copyToClipboard(code, lang)}
-                        className="text-gray-400 hover:text-white"
+                        className="text-white/80 hover:text-white"
                       >
                         {copiedCode === lang ? (
                           <>
@@ -250,7 +249,7 @@ const DocumentationPage: React.FC = () => {
                       </Button>
                     </div>
                     <pre className="p-4 overflow-x-auto">
-                      <code className="text-sm text-gray-300 font-mono">{code}</code>
+                      <code className="text-sm text-white/90 font-mono">{code}</code>
                     </pre>
                   </div>
                 </TabsContent>
@@ -267,7 +266,7 @@ const DocumentationPage: React.FC = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               API Reference
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Complete reference for all EncryptKey API endpoints
             </p>
           </div>
@@ -303,8 +302,8 @@ const DocumentationPage: React.FC = () => {
                     >
                       {endpoint.method}
                     </span>
-                    <code className="text-gray-300 font-mono text-sm">{endpoint.path}</code>
-                    <span className="text-gray-500 text-sm ml-auto hidden sm:block">
+                    <code className="text-white/90 font-mono text-sm">{endpoint.path}</code>
+                    <span className="text-white/80 text-sm ml-auto hidden sm:block">
                       {endpoint.description}
                     </span>
                   </div>
@@ -322,7 +321,7 @@ const DocumentationPage: React.FC = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               Official SDKs
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Use our official SDKs for the best developer experience
             </p>
           </div>
@@ -339,8 +338,8 @@ const DocumentationPage: React.FC = () => {
                 className="p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-encrypt-blue/50 transition-all"
               >
                 <h3 className="text-lg font-semibold text-white mb-1">{sdk.name}</h3>
-                <p className="text-sm text-gray-500 mb-4">{sdk.version}</p>
-                <code className="block text-xs text-gray-400 bg-white/5 rounded px-3 py-2 font-mono">
+                <p className="text-sm text-white/80 mb-4">{sdk.version}</p>
+                <code className="block text-xs text-white/90 bg-white/5 rounded px-3 py-2 font-mono">
                   {sdk.install}
                 </code>
               </div>
@@ -355,7 +354,7 @@ const DocumentationPage: React.FC = () => {
           <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
             Need help getting started?
           </h2>
-          <p className="text-gray-400 mb-8">
+          <p className="text-white/90 mb-8">
             Our team is here to help you integrate EncryptKey into your application.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

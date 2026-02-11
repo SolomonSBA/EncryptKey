@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
                 Stay ahead of security threats
               </h3>
-              <p className="text-gray-400">
+              <p className="text-white/90">
                 Get the latest updates on encryption best practices, security news, and product updates delivered to your inbox.
               </p>
             </div>
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
                 Encrypt<span className="text-encrypt-magenta">Key</span>
               </span>
             </Link>
-            <p className="text-gray-400 mb-6 max-w-sm">
+            <p className="text-white/90 mb-6 max-w-sm">
               Enterprise-Grade encryption for modern payment systems. Secure, scalable, and compliant.
             </p>
             <div className="flex items-center gap-4">
@@ -140,7 +140,7 @@ const Footer: React.FC = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-white/80 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -157,7 +157,7 @@ const Footer: React.FC = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-white/80 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -174,7 +174,7 @@ const Footer: React.FC = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-white/80 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -191,7 +191,7 @@ const Footer: React.FC = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-white/80 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -206,11 +206,11 @@ const Footer: React.FC = () => {
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-500 text-sm">
+            <p className="text-white/80 text-sm">
               © {new Date().getFullYear()} EncryptKey Technologies. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <span className="flex items-center gap-2 text-gray-500 text-sm">
+              <span className="flex items-center gap-2 text-white/80 text-sm">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 All systems operational
               </span>

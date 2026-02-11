@@ -29,8 +29,8 @@ const pricingPlans = [
   {
     name: 'Starter',
     description: 'For small teams getting started with encryption',
-    monthlyPrice: 499,
-    yearlyPrice: 399,
+    // monthlyPrice: 499,
+    // yearlyPrice: 399,
     features: [
       { name: 'Up to 1M API calls/month', included: true },
       { name: '5 encryption keys', included: true },
@@ -49,8 +49,8 @@ const pricingPlans = [
   {
     name: 'Professional',
     description: 'For growing businesses with advanced needs',
-    monthlyPrice: 1499,
-    yearlyPrice: 1199,
+    // monthlyPrice: 1499,
+    // yearlyPrice: 1199,
     features: [
       { name: 'Up to 10M API calls/month', included: true },
       { name: '50 encryption keys', included: true },
@@ -143,25 +143,25 @@ const PricingPage: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
             <Zap className="w-4 h-4 text-encrypt-magenta" />
-            <span className="text-sm text-gray-300">Simple, transparent pricing</span>
+            <span className="text-sm text-white/90">Simple, transparent pricing</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Flexible pricing designed to scale
+            Get to know our pricing
           </h1>
-          <p className="text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto mb-8">
+          <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
             EncryptKey pricing is structured to reflect transaction scale, security posture, and operational complexity—ensuring institutions pay for infrastructure that grows with their environment, not per-feature tooling.
           </p>
           
           {/* Billing Toggle */}
           <div className="flex items-center justify-center gap-4 mb-12">
-            <span className={`text-sm ${!isYearly ? 'text-white' : 'text-gray-500'}`}>Monthly</span>
+            <span className={`text-sm ${!isYearly ? 'text-white' : 'text-white/60'}`}>Monthly</span>
             <Switch
               checked={isYearly}
               onCheckedChange={setIsYearly}
               className="data-[state=checked]:bg-encrypt-blue"
             />
-            <span className={`text-sm ${isYearly ? 'text-white' : 'text-gray-500'}`}>
+            <span className={`text-sm ${isYearly ? 'text-white' : 'text-white/60'}`}>
               Yearly
               <span className="ml-2 px-2 py-0.5 rounded-full bg-encrypt-magenta/20 text-encrypt-magenta text-xs">
                 Save 20%
@@ -192,19 +192,19 @@ const PricingPage: React.FC = () => {
                 
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-                  <p className="text-gray-400 text-sm">{plan.description}</p>
+                  <p className="text-white/90 text-sm">{plan.description}</p>
                 </div>
                 
                 <div className="mb-6">
                   {plan.monthlyPrice ? (
                     <>
                       <span className="text-4xl font-bold text-white">
-                        ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                        £{isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                       </span>
-                      <span className="text-gray-400">/month</span>
+                      <span className="text-white/80">/month</span>
                       {isYearly && (
-                        <p className="text-sm text-gray-500 mt-1">
-                          Billed annually (${plan.yearlyPrice! * 12}/year)
+                        <p className="text-sm text-white/70 mt-1">
+                          Billed annually (£{plan.yearlyPrice! * 12}/year)
                         </p>
                       )}
                     </>
@@ -221,7 +221,7 @@ const PricingPage: React.FC = () => {
                       ) : (
                         <X className="w-5 h-5 text-gray-600 flex-shrink-0 mt-0.5" />
                       )}
-                      <span className={feature.included ? 'text-gray-300' : 'text-gray-600'}>
+                      <span className={feature.included ? 'text-white/90' : 'text-white/50'}>
                         {feature.name}
                       </span>
                     </li>
@@ -249,7 +249,7 @@ const PricingPage: React.FC = () => {
                     <DialogContent className="bg-encrypt-dark border-white/10 text-white">
                       <DialogHeader>
                         <DialogTitle>Contact Sales</DialogTitle>
-                        <DialogDescription className="text-gray-400">
+                        <DialogDescription className="text-white/90">
                           Fill out the form below and our team will get back to you within 24 hours.
                         </DialogDescription>
                       </DialogHeader>
@@ -324,9 +324,9 @@ const PricingPage: React.FC = () => {
       <section className="py-20 lg:py-24 bg-[#ff66c4]/10 border-y border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-            Want to get started? Request a Demo
+            Want to get started? Get in touch
           </h2>
-          <p className="text-gray-400 mb-8">
+          <p className="text-white/90 mb-8">
             Schedule a demo to see the EncryptKey platform in action.
           </p>
           <Button
@@ -349,7 +349,7 @@ const PricingPage: React.FC = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               Frequently asked questions
             </h2>
-            <p className="text-gray-400">
+            <p className="text-white/90">
               Everything you need to know about pricing and billing
             </p>
           </div>
@@ -364,13 +364,13 @@ const PricingPage: React.FC = () => {
                   <HelpCircle className="w-5 h-5 text-encrypt-blue" />
                   {faq.question}
                 </h3>
-                <p className="text-gray-400 pl-7">{faq.answer}</p>
+                <p className="text-white/90 pl-7">{faq.answer}</p>
               </div>
             ))}
           </div>
           
           <div className="text-center mt-12">
-            <p className="text-gray-400 mb-4">Still have questions?</p>
+            <p className="text-white/90 mb-4">Still have questions?</p>
             <Button
               variant="outline"
               className="border-white/20 text-white hover:bg-white/5"

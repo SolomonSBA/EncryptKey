@@ -8,16 +8,15 @@ import {
 import { Button } from '@/components/ui/button';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-
-const caseImage1 = 'https://d64gsuwffb70l.cloudfront.net/69833e6536dcbf57940a4687_1770208973207_788aabe8.jpg';
-const caseImage2 = 'https://d64gsuwffb70l.cloudfront.net/69833e6536dcbf57940a4687_1770208974818_b3a9c478.jpg';
-const caseImage3 = 'https://d64gsuwffb70l.cloudfront.net/69833e6536dcbf57940a4687_1770209009764_98afa103.jpg';
+import caseImage1 from '@/assets/Image1.jpg';
+import caseImage2 from '@/assets/Image2.jpg';
+import caseImage3 from '@/assets/Image3.jpg';
 
 const useCases = [
   {
     icon: CreditCard,
     title: 'Securing Payment APIs',
-    description: 'Protect sensitive payment data with enterprise-Grade encryption across all your API endpoints.',
+    description: 'Protect sensitive payment data with Enterprise-Grade encryption across all your API endpoints.',
     image: caseImage1,
     benefits: [
       'End-to-end encryption for card data',
@@ -92,7 +91,7 @@ const CasesPage: React.FC = () => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
             Use cases
           </h1>
-          <p className="text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto mb-8">
+          <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
             EncryptKey enables organizations to enforce consistent cryptographic controls without slowing down operations or development velocity.
           </p>
         </div>
@@ -102,10 +101,10 @@ const CasesPage: React.FC = () => {
       <section className="py-16 lg:py-20 border-y border-white/5 bg-white/[0.02]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p className="text-lg lg:text-xl text-gray-300 leading-relaxed">
+            <p className="text-lg lg:text-xl text-white/90 leading-relaxed">
               By centralizing encryption and key lifecycle management into a dedicated platform, EncryptKey removes the need for individual teams to design, implement, and maintain cryptographic logic within each application. Security policies are applied uniformly across payment systems, processing environments, and partner integrations, reducing inconsistency and human error.
             </p>
-            <p className="text-lg lg:text-xl text-gray-300 leading-relaxed mt-6">
+            <p className="text-lg lg:text-xl text-white/90 leading-relaxed mt-6">
               Operational teams gain confidence through clear audit trails and controlled access, while security teams retain oversight without becoming bottlenecks. Developers continue to build and deploy at speed, without direct exposure to sensitive key material or cryptographic complexity.
             </p>
           </div>
@@ -129,7 +128,7 @@ const CasesPage: React.FC = () => {
                   <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                     {useCase.title}
                   </h2>
-                  <p className="text-lg text-gray-400 mb-8">
+                  <p className="text-lg text-white/90 mb-8">
                     {useCase.description}
                   </p>
                   
@@ -137,7 +136,7 @@ const CasesPage: React.FC = () => {
                     {useCase.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-center gap-3">
                         <CheckCircle className="w-5 h-5 text-encrypt-magenta flex-shrink-0" />
-                        <span className="text-gray-300">{benefit}</span>
+                        <span className="text-white/90">{benefit}</span>
                       </li>
                     ))}
                   </ul>
@@ -149,7 +148,7 @@ const CasesPage: React.FC = () => {
                         <div className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-encrypt-blue to-encrypt-magenta bg-clip-text text-transparent">
                           {stat.value}
                         </div>
-                        <div className="text-xs text-gray-500">{stat.label}</div>
+                        <div className="text-xs text-white/80">{stat.label}</div>
                       </div>
                     ))}
                   </div>
@@ -180,7 +179,7 @@ const CasesPage: React.FC = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               Trusted across industries
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               From financial services to healthcare, organizations trust EncryptKey for their encryption needs
             </p>
           </div>
@@ -195,7 +194,7 @@ const CasesPage: React.FC = () => {
                   <industry.icon className="w-7 h-7 text-encrypt-blue" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{industry.name}</h3>
-                <p className="text-gray-500 text-sm">{industry.description}</p>
+                <p className="text-white/80 text-sm">{industry.description}</p>
               </div>
             ))}
           </div>
@@ -217,7 +216,7 @@ const CasesPage: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-white font-medium">James Davidson</div>
-                  <div className="text-gray-500 text-sm">CTO, SecurePay Inc.</div>
+                  {/* <div className="text-white/80 text-sm">CTO, SecurePay Inc.</div> */}
                 </div>
               </footer>
             </blockquote>
