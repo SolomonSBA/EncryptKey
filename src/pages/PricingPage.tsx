@@ -24,6 +24,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { submitSalesForm } from '@/lib/formspree';
 
 const pricingPlans = [
   {
@@ -121,15 +122,30 @@ const PricingPage: React.FC = () => {
     message: ''
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [salesError, setSalesError] = useState<string | null>(null);
+  const [salesLoading, setSalesLoading] = useState(false);
 
-  const handleDemoSubmit = (e: React.FormEvent) => {
+  const handleDemoSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setDemoDialogOpen(false);
-      setFormSubmitted(false);
-      setFormData({ name: '', email: '', company: '', message: '' });
-    }, 2000);
+    setSalesError(null);
+    setSalesLoading(true);
+    const { ok, error } = await submitSalesForm({
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      message: formData.message,
+    });
+    setSalesLoading(false);
+    if (ok) {
+      setFormSubmitted(true);
+      setTimeout(() => {
+        setDemoDialogOpen(false);
+        setFormSubmitted(false);
+        setFormData({ name: '', email: '', company: '', message: '' });
+      }, 2000);
+    } else {
+      setSalesError(error || 'Failed to send. Please try again.');
+    }
   };
 
   return (
@@ -262,6 +278,9 @@ const PricingPage: React.FC = () => {
                         </div>
                       ) : (
                         <form onSubmit={handleDemoSubmit} className="space-y-4">
+                          {salesError && (
+                            <p className="text-red-300 text-sm">{salesError}</p>
+                          )}
                           <div>
                             <Label htmlFor="name">Name</Label>
                             <Input
@@ -305,9 +324,10 @@ const PricingPage: React.FC = () => {
                           </div>
                           <Button
                             type="submit"
+                            disabled={salesLoading}
                             className="w-full bg-gradient-to-r from-encrypt-blue to-encrypt-magenta hover:opacity-90 text-white"
                           >
-                            Submit Request
+                            {salesLoading ? 'Sending…' : 'Submit Request'}
                           </Button>
                         </form>
                       )}

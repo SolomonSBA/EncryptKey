@@ -18,12 +18,13 @@ import {
 } from '@/components/ui/select';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { submitContactForm } from '@/lib/formspree';
 
 const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'info@sterlingprobiotranx.co.uk',
+    value: 'contact@sterlingprong.com',
     description: 'Send us an email anytime'
   },
   {
@@ -65,16 +66,26 @@ const ContactPage: React.FC = () => {
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
     setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setFormSubmitted(true);
+    const { ok, error } = await submitContactForm({
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      company: formData.company,
+      reason: formData.reason,
+      message: formData.message,
+    });
     setIsSubmitting(false);
+    if (ok) {
+      setFormSubmitted(true);
+    } else {
+      setSubmitError(error || 'Something went wrong. Please try again or email us directly.');
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -161,11 +172,17 @@ const ContactPage: React.FC = () => {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {submitError && (
+                      <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-300 text-sm">
+                        {submitError}
+                      </div>
+                    )}
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div>
                         <Label htmlFor="firstName" className="text-white/90">First Name</Label>
                         <Input
                           id="firstName"
+                          name="firstName"
                           value={formData.firstName}
                           onChange={(e) => handleInputChange('firstName', e.target.value)}
                           className="mt-2 bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-encrypt-blue"
@@ -177,6 +194,7 @@ const ContactPage: React.FC = () => {
                         <Label htmlFor="lastName" className="text-white/90">Last Name</Label>
                         <Input
                           id="lastName"
+                          name="lastName"
                           value={formData.lastName}
                           onChange={(e) => handleInputChange('lastName', e.target.value)}
                           className="mt-2 bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-encrypt-blue"
@@ -190,19 +208,21 @@ const ContactPage: React.FC = () => {
                       <Label htmlFor="email" className="text-white/90">Email</Label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => handleInputChange('email', e.target.value)}
                         className="mt-2 bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-encrypt-blue"
-                        placeholder="info@sterlingprobiotranx.co.uk"
+                        placeholder="you@company.com"
                         required
                       />
                     </div>
                     
                     <div>
                       <Label htmlFor="company" className="text-white/90">Company</Label>
-                      <Input
+                        <Input
                         id="company"
+                        name="company"
                         value={formData.company}
                         onChange={(e) => handleInputChange('company', e.target.value)}
                         className="mt-2 bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-encrypt-blue"
@@ -238,6 +258,7 @@ const ContactPage: React.FC = () => {
                       <Label htmlFor="message" className="text-white/90">Message</Label>
                       <Textarea
                         id="message"
+                        name="message"
                         value={formData.message}
                         onChange={(e) => handleInputChange('message', e.target.value)}
                         className="mt-2 bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-encrypt-blue min-h-[150px]"

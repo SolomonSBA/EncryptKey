@@ -3,17 +3,27 @@ import { Link } from 'react-router-dom';
 import { Shield, Github, Twitter, Linkedin, Mail, ArrowRight, X, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { submitNewsletterForm } from '@/lib/formspree';
 
 const Footer: React.FC = () => {
   const [email, setEmail] = React.useState('');
   const [subscribed, setSubscribed] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
+  const [loading, setLoading] = React.useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+    setError(null);
+    setLoading(true);
+    const { ok } = await submitNewsletterForm({ email });
+    setLoading(false);
+    if (ok) {
       setSubscribed(true);
       setEmail('');
-      setTimeout(() => setSubscribed(false), 3000);
+      setTimeout(() => setSubscribed(false), 4000);
+    } else {
+      setError('Subscription failed. Try again or contact us.');
     }
   };
 
@@ -62,19 +72,25 @@ const Footer: React.FC = () => {
               </p>
             </div>
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+              {error && (
+                <p className="text-red-300 text-sm sm:col-span-2">{error}</p>
+              )}
               <Input
                 type="email"
+                name="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-encrypt-blue"
                 required
+                disabled={loading}
               />
               <Button
                 type="submit"
+                disabled={loading}
                 className="bg-gradient-to-r from-encrypt-blue to-encrypt-magenta hover:opacity-90 text-white whitespace-nowrap"
               >
-                {subscribed ? 'Subscribed!' : 'Subscribe'}
+                {subscribed ? 'Subscribed!' : loading ? 'Sending…' : 'Subscribe'}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </form>
