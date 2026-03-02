@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
               <Button
                 type="submit"
                 disabled={loading}
-                className="bg-gradient-to-r from-encrypt-blue to-encrypt-magenta hover:opacity-90 text-white whitespace-nowrap"
+                className="bg-encrypt-blue hover:bg-encrypt-magenta text-[#080C14] font-semibold whitespace-nowrap rounded-md"
               >
                 {subscribed ? 'Subscribed!' : loading ? 'Sending…' : 'Subscribe'}
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -104,11 +104,11 @@ const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-encrypt-blue to-encrypt-magenta flex items-center justify-center">
-                <Shield className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 rounded-lg bg-encrypt-blue flex items-center justify-center">
+                <Shield className="w-6 h-6 text-[#080C14]" />
               </div>
               <span className="text-xl font-bold text-white tracking-tight">
-                Encrypt<span className="text-encrypt-magenta">Key</span>
+                Encrypt<span className="text-encrypt-blue">Key</span>
               </span>
             </Link>
             <p className="text-white/90 mb-6 max-w-sm">

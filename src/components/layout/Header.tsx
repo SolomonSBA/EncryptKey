@@ -33,13 +33,13 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="relative">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-encrypt-blue to-encrypt-magenta flex items-center justify-center transform group-hover:scale-105 transition-transform">
-                <Shield className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 rounded-lg bg-encrypt-blue flex items-center justify-center transform group-hover:scale-105 transition-transform">
+                <Shield className="w-6 h-6 text-[#080C14]" />
               </div>
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-encrypt-blue to-encrypt-magenta blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
+              <div className="absolute inset-0 rounded-lg bg-encrypt-blue blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
             </div>
             <span className="text-xl font-bold text-white tracking-tight">
-              Encrypt<span className="text-encrypt-magenta">Key</span>
+              Encrypt<span className="text-encrypt-blue">Key</span>
             </span>
           </Link>
 
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
                 to={link.href}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive(link.href)
-                    ? 'text-white bg-white/10'
+                    ? 'text-encrypt-blue border-b-2 border-encrypt-blue bg-transparent'
                     : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center">
             <Button
-              className="bg-gradient-to-r from-encrypt-blue to-encrypt-magenta hover:opacity-90 text-white border-0 shadow-lg shadow-encrypt-blue/25"
+              className="bg-encrypt-blue hover:bg-encrypt-magenta text-[#080C14] font-semibold border-0 rounded-md shadow-none hover:shadow-[0_0_28px_rgba(0,184,150,0.35)] transition-all duration-200"
               asChild
             >
               <Link to="/contact">Request integration details</Link>
@@ -97,7 +97,7 @@ const Header: React.FC = () => {
                       onClick={() => setIsOpen(false)}
                       className={`block px-4 py-3 rounded-lg text-base font-medium transition-all ${
                         isActive(link.href)
-                          ? 'text-white bg-white/10'
+                          ? 'text-encrypt-blue border-b-2 border-encrypt-blue bg-transparent'
                           : 'text-gray-400 hover:text-white hover:bg-white/5'
                       }`}
                     >
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
                 </nav>
                 <div className="p-6 border-t border-white/10">
                   <Button
-                    className="w-full bg-gradient-to-r from-encrypt-blue to-encrypt-magenta hover:opacity-90 text-white"
+                    className="w-full bg-encrypt-blue hover:bg-encrypt-magenta text-[#080C14] font-semibold rounded-md"
                     asChild
                   >
                     <Link to="/contact" onClick={() => setIsOpen(false)}>Request integration details</Link>
