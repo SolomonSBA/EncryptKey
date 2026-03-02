@@ -10,8 +10,8 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import featureImage1 from '@/assets/Image1.jpg';
 import featureImage2 from '@/assets/Image2.jpg';
-import featureImage3 from '@/assets/Image3.jpg';
-import featureImage4 from '@/assets/featureImage.jpg';
+import featureImage3 from '@/assets/image3.webp';
+import featureImage4 from '@/assets/featureImage.avif';
 
 const mainFeatures = [
   {
@@ -113,7 +113,7 @@ const FeaturesPage: React.FC = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Designed for security teams. Trusted by operations. Invisible to developers.
+            Designed for security teams. Trusted by operations. 
           </h1>
           <p className="text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto mb-8">
             EncryptKey centralizes encryption and key management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows.

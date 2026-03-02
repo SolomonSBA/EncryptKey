@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-white/90 mb-6 max-w-sm">
-              Enterprise-Grade encryption for modern payment systems. Secure, scalable, and compliant.
+              Enterprise Grade encryption for modern payment systems. Secure, scalable, and compliant.
             </p>
             <div className="flex items-center gap-4">
               <a

@@ -10,7 +10,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import caseImage1 from '@/assets/Image1.jpg';
 import caseImage2 from '@/assets/Image2.jpg';
-import caseImage3 from '@/assets/Image3.jpg';
+import caseImage3 from '@/assets/image3.webp';
 
 const useCases = [
   {
@@ -89,7 +89,7 @@ const CasesPage: React.FC = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Use cases
+            Use Cases
           </h1>
           <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
             EncryptKey enables organizations to enforce consistent cryptographic controls without slowing down operations or development velocity.

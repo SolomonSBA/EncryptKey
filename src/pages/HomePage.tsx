@@ -6,6 +6,8 @@ import {
   ChevronRight, Play
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import heroImage from '@/assets/heroImage.jpg';
+import featureImage from '@/assets/featureImage.jpg';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
@@ -74,7 +76,7 @@ const HomePage: React.FC = () => {
               </h1>
               
               <p className="text-lg lg:text-xl text-white/90 mb-4 max-w-xl mx-auto lg:mx-0 animate-slide-in font-sans" style={{ animationDelay: '0.1s', fontFamily: 'var(--font-body, "DM Sans", sans-serif)' }}>
-                EncryptKey provides AES-256 encryption-as-a-service for financial institutions and payment platforms operating in regulated, high-availability environments.
+                EncryptKey provides AES-256 encryption as a service for financial institutions and payment platforms operating in regulated, high-availability environments.
               </p>
               <div className="hero-stats flex flex-wrap gap-0 mt-10 pt-8 border-t border-white/10 animate-slide-in" style={{ animationDelay: '0.12s' }}>
                 {heroProofStrip.map((item, i) => (
@@ -112,7 +114,7 @@ const HomePage: React.FC = () => {
             
             {/* Hero visual — institutional teal/dark; swap in a product screenshot later if you have one */}
             <div className="relative animate-fade-in hero-content" style={{ animationDelay: '0.3s' }}>
-              <HeroVisual />
+              {/* <HeroVisual /> */}
             </div>
           </div>
         </div>
@@ -158,7 +160,7 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">
-              Designed for security teams. Trusted by operations. Invisible to developers.
+              Designed for security teams. Trusted by operations. 
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
               Centralized encryption and key lifecycle management that integrates with your payment and transaction flows.
@@ -187,7 +189,7 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative order-2 lg:order-1">
-              <FeatureSectionVisual />
+              {/* <FeatureSectionVisual /> */}
             </div>
             
             <div className="order-1 lg:order-2">
@@ -195,7 +197,7 @@ const HomePage: React.FC = () => {
                 A security foundation that scales
               </h2>
               <p className="text-lg text-white/90 mb-8">
-                EncryptKey centralizes encryption and key lifecycle management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows. Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems—reducing operational risk, simplifying regulatory compliance, and ensuring sensitive payment data remains protected.
+                EncryptKey centralizes encryption and key lifecycle management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows. Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems reducing operational risk, simplifying regulatory compliance, and ensuring sensitive payment data remains protected.
               </p>
               
               <ul className="space-y-4 mb-8">
