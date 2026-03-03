@@ -70,8 +70,7 @@ function getTransporter() {
 const contactTo = env('CONTACT_TO_EMAIL') || env('SMTP_USER');
 const newsletterTo = env('NEWSLETTER_TO_EMAIL') || contactTo;
 
-// Contact handler (used for both /api/contact and /contact when app is mounted at /api)
-async function handleContact(req, res) {
+app.post('/api/contact', async (req, res) => {
   try {
     const { firstName, lastName, email, company, reason, message, _subject } = req.body || {};
     console.log('Contact form received from', email || '(no email)');
@@ -98,10 +97,9 @@ async function handleContact(req, res) {
     console.error('Contact send error:', e);
     res.status(500).json({ ok: false, error: e.message || 'Failed to send' });
   }
-}
+});
 
-// Newsletter handler (used for both /api/newsletter and /newsletter when app is mounted at /api)
-async function handleNewsletter(req, res) {
+app.post('/api/newsletter', async (req, res) => {
   try {
     const { email } = req.body || {};
     if (!email) {
@@ -120,22 +118,8 @@ async function handleNewsletter(req, res) {
     console.error('Newsletter send error:', e);
     res.status(500).json({ ok: false, error: e.message || 'Failed to send' });
   }
-}
-
-// —— API routes (must be before static so /api/* is not served as files)
-app.get('/api/contact', (req, res) => res.json({ status: 'ok', message: 'Contact API' }));
-app.get('/api', (req, res) => res.json({ status: 'ok', message: 'EncryptKey API' }));
-app.post('/api/contact', handleContact);
-app.post('/api/newsletter', handleNewsletter);
-
-// —— Static React app (from ./public – build output goes here)
-app.use(express.static(path.join(__dirname, 'public')));
-
-// —— SPA fallback: non-file GET requests → index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, () => {
-  console.log(`EncryptKey (API + site) listening on port ${PORT}`);
+  console.log(`Contact API listening on port ${PORT}`);
 });
