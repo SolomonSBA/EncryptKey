@@ -10,7 +10,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import featureImage1 from '@/assets/Image1.jpg';
 import featureImage2 from '@/assets/Image2.jpg';
-import featureImage3 from '@/assets/image3.jpg';
+import featureImage3 from '@/assets/Image3.jpg';
 import featureImage4 from '@/assets/featureImage.jpg';
 
 const mainFeatures = [
