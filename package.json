@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
+    "build:single": "vite build && node -e \"const fs=require('fs'); const p=require('path'); const out=p.join('server','public'); fs.mkdirSync(out,{recursive:true}); fs.readdirSync('dist').forEach(f=>{ const src=p.join('dist',f); const dest=p.join(out,f); fs.cpSync(src, dest, {recursive: true}); });\"",
     "lint": "eslint .",
     "preview": "vite preview"
   },

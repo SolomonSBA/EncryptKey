@@ -6,13 +6,11 @@ import {
   ChevronRight, Play
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/heroImage.jpg';
-import featureImage from '@/assets/featureImage.jpg';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
-import HeroVisual from '@/components/HeroVisual';
-import FeatureSectionVisual from '@/components/FeatureSectionVisual';
+import heroImage from '@/assets/heroImage.jpg';
+import featureImage from '@/assets/featureImage.jpg';
 
 const features = [
   {
@@ -56,33 +54,33 @@ const trustedBy = [
 
 const HomePage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-encrypt-dark">
+    <div className="min-h-screen bg-encrypt-page">
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-24 lg:pt-32 pb-20 lg:pb-32 overflow-hidden bg-encrypt-dark" style={{ backgroundImage: 'linear-gradient(rgba(0, 184, 150, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 184, 150, 0.035) 1px, transparent 1px)', backgroundSize: '48px 48px' }}>
+      <section className="relative pt-24 lg:pt-32 pb-20 lg:pb-32 overflow-hidden bg-encrypt-page hero-grid-bg">
         <div className="hero-glow" aria-hidden />
-        <div className="absolute inset-0 bg-gradient-to-b from-encrypt-blue/5 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-encrypt-blue/5 via-transparent to-encrypt-magenta/5" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-content">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Content */}
             <div className="text-center lg:text-left">
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-white leading-tight mb-6 animate-slide-in" style={{ fontFamily: 'var(--font-display, "DM Serif Display", Georgia, serif)' }}>
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-foreground leading-tight mb-6 animate-slide-in" style={{ fontFamily: 'var(--font-display, "DM Serif Display", Georgia, serif)' }}>
                 <span className="whitespace-nowrap">Enterprise-Grade</span> encryption for{' '}
-                <span className="text-encrypt-blue">
+                <span className="gradient-text">
                   modern payment systems at scale
                 </span>
               </h1>
               
-              <p className="text-lg lg:text-xl text-white/90 mb-4 max-w-xl mx-auto lg:mx-0 animate-slide-in font-sans" style={{ animationDelay: '0.1s', fontFamily: 'var(--font-body, "DM Sans", sans-serif)' }}>
+              <p className="text-lg lg:text-xl text-muted-foreground mb-4 max-w-xl mx-auto lg:mx-0 animate-slide-in font-sans" style={{ animationDelay: '0.1s', fontFamily: 'var(--font-body, "DM Sans", sans-serif)' }}>
                 EncryptKey provides AES-256 encryption as a service for financial institutions and payment platforms operating in regulated, high-availability environments.
               </p>
-              <div className="hero-stats flex flex-wrap gap-0 mt-10 pt-8 border-t border-white/10 animate-slide-in" style={{ animationDelay: '0.12s' }}>
+              <div className="hero-stats flex flex-wrap gap-0 mt-10 pt-8 border-t border-border animate-slide-in" style={{ animationDelay: '0.12s' }}>
                 {heroProofStrip.map((item, i) => (
-                  <div key={i} className="flex-1 min-w-[100px] pr-6 border-r border-white/10 last:border-r-0 last:pr-0">
-                    <div className="font-mono text-xl lg:text-2xl font-medium text-white/90">{item.value}</div>
-                    <div className="text-xs font-medium text-white/60 uppercase tracking-wider mt-1">{item.label}</div>
+                  <div key={i} className="flex-1 min-w-[100px] pr-6 border-r border-border last:border-r-0 last:pr-0">
+                    <div className="font-mono text-xl lg:text-2xl font-medium text-foreground">{item.value}</div>
+                    <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mt-1">{item.label}</div>
                   </div>
                 ))}
               </div>
@@ -90,7 +88,7 @@ const HomePage: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start animate-slide-in mt-8" style={{ animationDelay: '0.2s' }}>
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-encrypt-blue hover:bg-encrypt-magenta text-[#080C14] font-semibold text-lg px-8 py-6 rounded-md shadow-none hover:shadow-[0_0_28px_rgba(0,184,150,0.35)] transition-all duration-200"
+                  className="w-full sm:w-auto bg-gradient-to-r from-encrypt-blue to-encrypt-magenta hover:opacity-90 text-white text-lg px-8 py-6 shadow-lg shadow-encrypt-blue/25"
                   asChild
                 >
                   <Link to="/contact">
@@ -101,27 +99,33 @@ const HomePage: React.FC = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-white/20 text-white hover:bg-white/5 text-lg px-8 py-6"
+                  className="w-full sm:w-auto border-border text-foreground hover:bg-muted text-lg px-8 py-6"
                   asChild
                 >
-                  <Link to="/documentation">
+                  <Link to="/contact">
                     <Play className="w-5 h-5 mr-2" />
-                    View Documentation
+                    Get in Touch
                   </Link>
                 </Button>
               </div>
             </div>
             
-            {/* Hero visual — institutional teal/dark; swap in a product screenshot later if you have one */}
             <div className="relative animate-fade-in hero-content" style={{ animationDelay: '0.3s' }}>
-              {/* <HeroVisual /> */}
+              <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl">
+                <img
+                  src={heroImage}
+                  alt="EncryptKey Security Visualization"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 lg:py-20 border-y border-white/5 bg-white/[0.02]">
+      <section className="py-16 lg:py-20 border-y border-border bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {stats.map((stat, index) => (
@@ -129,7 +133,7 @@ const HomePage: React.FC = () => {
                 <div className="text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-encrypt-blue to-encrypt-magenta bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
-                <div className="text-white/80 text-sm lg:text-base">{stat.label}</div>
+                <div className="text-muted-foreground text-sm lg:text-base">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -139,14 +143,14 @@ const HomePage: React.FC = () => {
       {/* Trusted By Section */}
       <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-white/80 text-sm uppercase tracking-wider mb-8">
+          <p className="text-center text-muted-foreground text-sm uppercase tracking-wider mb-8">
             Trusted by leading financial institutions
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
             {trustedBy.map((company, index) => (
               <div
                 key={index}
-                className="text-xl lg:text-2xl font-bold text-white/70 hover:text-white transition-colors cursor-default"
+                className="text-xl lg:text-2xl font-bold text-muted-foreground hover:text-foreground transition-colors cursor-default"
               >
                 {company}
               </div>
@@ -159,10 +163,10 @@ const HomePage: React.FC = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">
-              Designed for security teams. Trusted by operations. 
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4">
+              Designed for security teams. Trusted by operations.
             </h2>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Centralized encryption and key lifecycle management that integrates with your payment and transaction flows.
             </p>
           </div>
@@ -171,13 +175,13 @@ const HomePage: React.FC = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative p-6 lg:p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-encrypt-blue/50 transition-all duration-300 hover:bg-white/[0.04]"
+                className="group relative p-6 lg:p-8 rounded-2xl bg-card border border-border hover:border-encrypt-blue/50 transition-all duration-300 hover:bg-muted/50"
               >
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-encrypt-blue/20 to-encrypt-magenta/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                   <feature.icon className="w-6 h-6 text-encrypt-blue" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-3">{feature.title}</h3>
-                <p className="text-white/90 text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-foreground mb-3">{feature.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -189,15 +193,21 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative order-2 lg:order-1">
-              {/* <FeatureSectionVisual /> */}
+              <div className="relative rounded-2xl overflow-hidden border border-border">
+                <img
+                  src={featureImage}
+                  alt="EncryptKey Platform"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
             </div>
             
             <div className="order-1 lg:order-2">
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-6">
                 A security foundation that scales
               </h2>
-              <p className="text-lg text-white/90 mb-8">
-                EncryptKey centralizes encryption and key lifecycle management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows. Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems reducing operational risk, simplifying regulatory compliance, and ensuring sensitive payment data remains protected.
+              <p className="text-lg text-muted-foreground mb-8">
+                EncryptKey centralizes encryption and key lifecycle management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows. Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems—reducing operational risk, simplifying regulatory compliance, and ensuring sensitive payment data remains protected.
               </p>
               
               <ul className="space-y-4 mb-8">
@@ -209,7 +219,7 @@ const HomePage: React.FC = () => {
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-encrypt-blue mt-0.5 flex-shrink-0" />
-                    <span className="text-white/90">{item}</span>
+                    <span className="text-muted-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -259,7 +269,7 @@ const HomePage: React.FC = () => {
                   className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6"
                   asChild
                 >
-                  <Link to="/pricing">View Pricing</Link>
+                  <Link to="/contact">Get in Touch</Link>
                 </Button>
               </div>
             </div>

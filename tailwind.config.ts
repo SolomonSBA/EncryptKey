@@ -65,14 +65,12 @@ export default {
           ring: 'hsl(var(--sidebar-ring))'
         },
         encrypt: {
-          blue: '#00B896',
-          magenta: '#00D4AD',
+           blue: '#2628DD',
+          magenta: '#C419BE',
           white: '#FFFFFF',
           black: '#000000',
-          dark: '#080C14',
-          'dark-card': '#111927',
-          gold: '#C9A84C',
-          'gold-dim': 'rgba(201, 168, 76, 0.12)',
+          dark: '#0a0a0f',
+          'dark-card': '#111118',
         }
       },
       fontFamily: {
@@ -107,8 +105,8 @@ export default {
           '50%': { transform: 'translateY(-10px)' },
         },
         'pulse-glow': {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 184, 150, 0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(0, 184, 150, 0.35)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(38, 40, 221, 0.3)' },
+          '50%': { boxShadow: '0 0 40px rgba(196, 25, 190, 0.5)' },
         },
         'gradient-shift': {
           '0%, 100%': { backgroundPosition: '0% 50%' },

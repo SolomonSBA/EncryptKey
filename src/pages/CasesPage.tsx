@@ -10,7 +10,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import caseImage1 from '@/assets/Image1.jpg';
 import caseImage2 from '@/assets/Image2.jpg';
-import caseImage3 from '@/assets/image3.webp';
+import caseImage3 from '@/assets/image3.jpg';
 
 const useCases = [
   {
@@ -75,7 +75,7 @@ const industries = [
 
 const CasesPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-encrypt-dark">
+    <div className="min-h-screen bg-encrypt-page">
       <Header />
       
       {/* Hero Section */}
@@ -83,28 +83,28 @@ const CasesPage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-encrypt-magenta/5 via-transparent to-transparent" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border mb-6">
             <Shield className="w-4 h-4 text-encrypt-magenta" />
             <span className="text-sm text-gray-300">Use Cases</span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
             Use Cases
           </h1>
-          <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
+          <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
             EncryptKey enables organizations to enforce consistent cryptographic controls without slowing down operations or development velocity.
           </p>
         </div>
       </section>
 
       {/* Main Value Prop */}
-      <section className="py-16 lg:py-20 border-y border-white/5 bg-white/[0.02]">
+      <section className="py-16 lg:py-20 border-y border-border bg-muted/30">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p className="text-lg lg:text-xl text-white/90 leading-relaxed">
+            <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
               By centralizing encryption and key lifecycle management into a dedicated platform, EncryptKey removes the need for individual teams to design, implement, and maintain cryptographic logic within each application. Security policies are applied uniformly across payment systems, processing environments, and partner integrations, reducing inconsistency and human error.
             </p>
-            <p className="text-lg lg:text-xl text-white/90 leading-relaxed mt-6">
+            <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mt-6">
               Operational teams gain confidence through clear audit trails and controlled access, while security teams retain oversight without becoming bottlenecks. Developers continue to build and deploy at speed, without direct exposure to sensitive key material or cryptographic complexity.
             </p>
           </div>
@@ -125,10 +125,10 @@ const CasesPage: React.FC = () => {
                     <useCase.icon className="w-7 h-7 text-encrypt-blue" />
                   </div>
                   
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
                     {useCase.title}
                   </h2>
-                  <p className="text-lg text-white/90 mb-8">
+                  <p className="text-lg text-muted-foreground mb-8">
                     {useCase.description}
                   </p>
                   
@@ -136,26 +136,26 @@ const CasesPage: React.FC = () => {
                     {useCase.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-center gap-3">
                         <CheckCircle className="w-5 h-5 text-encrypt-magenta flex-shrink-0" />
-                        <span className="text-white/90">{benefit}</span>
+                        <span className="text-muted-foreground">{benefit}</span>
                       </li>
                     ))}
                   </ul>
                   
                   {/* Stats */}
-                  <div className="grid grid-cols-3 gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                  <div className="grid grid-cols-3 gap-4 p-4 rounded-xl bg-white/[0.02] border border-border">
                     {useCase.stats.map((stat, i) => (
                       <div key={i} className="text-center">
                         <div className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-encrypt-blue to-encrypt-magenta bg-clip-text text-transparent">
                           {stat.value}
                         </div>
-                        <div className="text-xs text-white/80">{stat.label}</div>
+                        <div className="text-xs text-muted-foreground">{stat.label}</div>
                       </div>
                     ))}
                   </div>
                 </div>
                 
                 <div className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+                  <div className="relative rounded-2xl overflow-hidden border border-border bg-white/[0.02]">
                     <img
                       src={useCase.image}
                       alt={useCase.title}
@@ -173,13 +173,13 @@ const CasesPage: React.FC = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="py-20 lg:py-32 bg-white/[0.02] border-y border-white/5">
+      <section className="py-20 lg:py-32 bg-white/[0.02] border-y border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Trusted across industries
             </h2>
-            <p className="text-lg text-white/90 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               From financial services to healthcare, organizations trust EncryptKey for their encryption needs
             </p>
           </div>
@@ -188,13 +188,13 @@ const CasesPage: React.FC = () => {
             {industries.map((industry, index) => (
               <div
                 key={index}
-                className="group p-6 rounded-xl bg-encrypt-dark border border-white/5 hover:border-encrypt-blue/50 transition-all text-center"
+                className="group p-6 rounded-xl bg-card border border-border hover:border-encrypt-blue/50 transition-all text-center"
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-encrypt-blue/20 to-encrypt-magenta/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <industry.icon className="w-7 h-7 text-encrypt-blue" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">{industry.name}</h3>
-                <p className="text-white/80 text-sm">{industry.description}</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{industry.name}</h3>
+                <p className="text-muted-foreground text-sm">{industry.description}</p>
               </div>
             ))}
           </div>
@@ -204,10 +204,10 @@ const CasesPage: React.FC = () => {
       {/* Testimonial Section */}
       <section className="py-20 lg:py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative p-8 lg:p-12 rounded-2xl bg-gradient-to-r from-encrypt-blue/10 to-encrypt-magenta/10 border border-white/10">
+          <div className="relative p-8 lg:p-12 rounded-2xl bg-gradient-to-r from-encrypt-blue/10 to-encrypt-magenta/10 border border-border">
             <div className="absolute top-6 left-8 text-6xl text-encrypt-blue/30 font-serif">"</div>
             <blockquote className="relative z-10">
-              <p className="text-xl lg:text-2xl text-white leading-relaxed mb-6">
+              <p className="text-xl lg:text-2xl text-foreground leading-relaxed mb-6">
                 EncryptKey transformed how we handle payment security. What used to take our team weeks to implement now takes hours, and we have complete confidence in our compliance posture.
               </p>
               <footer className="flex items-center gap-4">
@@ -215,8 +215,8 @@ const CasesPage: React.FC = () => {
                   JD
                 </div>
                 <div>
-                  <div className="text-white font-medium">James Davidson</div>
-                  {/* <div className="text-white/80 text-sm">CTO, SecurePay Inc.</div> */}
+                  <div className="text-foreground font-medium">James Davidson</div>
+                  {/* <div className="text-muted-foreground text-sm">CTO, SecurePay Inc.</div> */}
                 </div>
               </footer>
             </blockquote>
@@ -235,7 +235,7 @@ const CasesPage: React.FC = () => {
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
                 Ready to secure your infrastructure?
               </h2>
-              <p className="text-lg lg:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
                 Join leading organizations that trust EncryptKey for their encryption needs.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -255,7 +255,7 @@ const CasesPage: React.FC = () => {
                   className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6"
                   asChild
                 >
-                  <Link to="/pricing">View Pricing</Link>
+                  <Link to="/contact">Get in Touch</Link>
                 </Button>
               </div>
             </div>

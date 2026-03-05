@@ -30,21 +30,16 @@ const Footer: React.FC = () => {
   const footerLinks = {
     product: [
       { name: 'Features', href: '/features' },
-      { name: 'Pricing', href: '/pricing' },
-      { name: 'Documentation', href: '/documentation' },
       { name: 'Use Cases', href: '/cases' },
-      { name: 'API Reference', href: '/documentation' },
     ],
     company: [
-      { name: 'About Us', href: '/contact' },
+      { name: 'About Us', href: 'https://sterlingprong.com/' },
       { name: 'Careers', href: '/contact' },
       // { name: 'Blog', href: '/documentation' },
       // { name: 'Press', href: '/contact' },
       // { name: 'Partners', href: '/contact' },
     ],
     resources: [
-      { name: 'Getting Started', href: '/documentation' },
-      { name: 'Tutorials', href: '/documentation' },
       { name: 'Community', href: '/contact' },
       { name: 'Support', href: '/contact' },
       { name: 'Status', href: '/contact' },
@@ -58,22 +53,22 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-encrypt-dark border-t border-white/5">
+    <footer className="bg-background border-t border-border">
       {/* Newsletter Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="bg-gradient-to-r from-encrypt-blue/10 to-encrypt-magenta/10 rounded-2xl p-8 lg:p-12 border border-white/5">
+        <div className="bg-gradient-to-r from-encrypt-blue/10 to-encrypt-magenta/10 rounded-2xl p-8 lg:p-12 border border-border">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
+              <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
                 Stay ahead of security threats
               </h3>
-              <p className="text-white/90">
+              <p className="text-muted-foreground">
                 Get the latest updates on encryption best practices, security news, and product updates delivered to your inbox.
               </p>
             </div>
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
               {error && (
-                <p className="text-red-300 text-sm sm:col-span-2">{error}</p>
+                <p className="text-destructive text-sm sm:col-span-2">{error}</p>
               )}
               <Input
                 type="email"
@@ -81,14 +76,14 @@ const Footer: React.FC = () => {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-encrypt-blue"
+                className="flex-1 bg-muted border-border text-foreground placeholder:text-muted-foreground focus:border-encrypt-blue"
                 required
                 disabled={loading}
               />
               <Button
                 type="submit"
                 disabled={loading}
-                className="bg-encrypt-blue hover:bg-encrypt-magenta text-[#080C14] font-semibold whitespace-nowrap rounded-md"
+                className="bg-gradient-to-r from-encrypt-blue to-encrypt-magenta hover:opacity-90 text-white whitespace-nowrap"
               >
                 {subscribed ? 'Subscribed!' : loading ? 'Sending…' : 'Subscribe'}
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -99,19 +94,19 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 border-t border-border">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-encrypt-blue flex items-center justify-center">
-                <Shield className="w-6 h-6 text-[#080C14]" />
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-encrypt-blue to-encrypt-magenta flex items-center justify-center">
+                <Shield className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-white tracking-tight">
-                Encrypt<span className="text-encrypt-blue">Key</span>
+              <span className="text-xl font-bold text-foreground tracking-tight">
+                Encrypt<span className="text-encrypt-magenta">Key</span>
               </span>
             </Link>
-            <p className="text-white/90 mb-6 max-w-sm">
+            <p className="text-muted-foreground mb-6 max-w-sm">
               Enterprise Grade encryption for modern payment systems. Secure, scalable, and compliant.
             </p>
             <div className="flex items-center gap-4">
@@ -119,7 +114,7 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/sterlingprong/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+                className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -127,7 +122,7 @@ const Footer: React.FC = () => {
                 href="https://twitter.com/Sterlingpro_ng"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+                className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
               >
                 <X className="w-5 h-5" />
               </a>
@@ -135,13 +130,13 @@ const Footer: React.FC = () => {
                 href="https://ng.linkedin.com/company/sterlingpro-business-applications"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+                className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="mailto:info@sterlingprobiotranx.co.uk"
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+                className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
               >
                 <Mail className="w-5 h-5" />
               </a>
@@ -150,13 +145,13 @@ const Footer: React.FC = () => {
 
           {/* Product Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Product</h4>
+            <h4 className="text-foreground font-semibold mb-4">Product</h4>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-white/80 hover:text-white transition-colors text-sm"
+                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -167,13 +162,13 @@ const Footer: React.FC = () => {
 
           {/* Company Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Company</h4>
+            <h4 className="text-foreground font-semibold mb-4">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-white/80 hover:text-white transition-colors text-sm"
+                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -184,13 +179,13 @@ const Footer: React.FC = () => {
 
           {/* Resources Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Resources</h4>
+            <h4 className="text-foreground font-semibold mb-4">Resources</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-white/80 hover:text-white transition-colors text-sm"
+                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -201,13 +196,13 @@ const Footer: React.FC = () => {
 
           {/* Legal Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <h4 className="text-foreground font-semibold mb-4">Legal</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-white/80 hover:text-white transition-colors text-sm"
+                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -219,14 +214,14 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/5">
+      <div className="border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-white/80 text-sm">
+            <p className="text-muted-foreground text-sm">
               © {new Date().getFullYear()} EncryptKey Technologies. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <span className="flex items-center gap-2 text-white/80 text-sm">
+              <span className="flex items-center gap-2 text-muted-foreground text-sm">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 All systems operational
               </span>

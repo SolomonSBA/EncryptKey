@@ -113,16 +113,20 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00B896;
+  background: #2628DD;
   border-radius: 4px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #2628DD;
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #00D4AD;
+  background: #C419BE;
 }
 
 /* Animation utilities */
@@ -142,31 +146,44 @@
   animation-delay: 400ms;
 }
 
-/* Gradient text utility — institutional teal (no purple/magenta) */
+/* Gradient text utility — purple/magenta */
 .gradient-text {
-  color: #00B896;
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
+  @apply bg-gradient-to-r from-encrypt-blue to-encrypt-magenta bg-clip-text text-transparent;
 }
 
 /* Glow effects */
-.glow-blue,
+.glow-blue {
+  box-shadow: 0 0 20px rgba(38, 40, 221, 0.3);
+}
+
 .glow-magenta {
-  box-shadow: 0 0 20px rgba(0, 184, 150, 0.3);
+  box-shadow: 0 0 20px rgba(196, 25, 190, 0.3);
 }
 
 .glow-gradient {
-  box-shadow: 0 0 28px rgba(0, 184, 150, 0.35);
+  box-shadow: 0 0 30px rgba(38, 40, 221, 0.2), 0 0 60px rgba(196, 25, 190, 0.1);
 }
 
-/* Compliance / institutional styles */
+/* Theme-aware page/section backgrounds */
 :root {
-  --bg-base: #080C14;
-  --accent: #00B896;
-  --accent-lt: #00D4AD;
-  --gold: #C9A84C;
-  --gold-dim: rgba(201, 168, 76, 0.12);
+  --encrypt-page-bg: 210 40% 98%;
+  --encrypt-hero-grid: rgba(38, 40, 221, 0.06);
+  --encrypt-hero-glow: rgba(38, 40, 221, 0.08);
+}
+
+.dark {
+  --encrypt-page-bg: 240 10% 4%;
+  --encrypt-hero-grid: rgba(38, 40, 221, 0.035);
+  --encrypt-hero-glow: rgba(38, 40, 221, 0.12);
+}
+
+.bg-encrypt-page {
+  background-color: hsl(var(--encrypt-page-bg));
+}
+
+.hero-grid-bg {
+  background-image: linear-gradient(var(--encrypt-hero-grid) 1px, transparent 1px), linear-gradient(90deg, var(--encrypt-hero-grid) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 .hero-glow {
@@ -175,7 +192,7 @@
   left: -5%;
   width: 55%;
   height: 700px;
-  background: radial-gradient(ellipse at top left, rgba(0, 184, 150, 0.07) 0%, transparent 60%);
+  background: radial-gradient(ellipse at top left, var(--encrypt-hero-glow) 0%, transparent 60%);
   pointer-events: none;
   z-index: 0;
 }
