@@ -10,7 +10,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import caseImage1 from '@/assets/Image1.jpg';
 import caseImage2 from '@/assets/Image2.jpg';
-import caseImage3 from '@/assets/image3.jpg';
+import caseImage3 from '@/assets/Image3.jpg';
 
 const useCases = [
   {
