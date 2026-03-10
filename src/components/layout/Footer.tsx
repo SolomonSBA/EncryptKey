@@ -60,10 +60,10 @@ const Footer: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
-                Stay ahead of security threats
+                Request a technical integration brief.
               </h3>
               <p className="text-muted-foreground">
-                Get the latest updates on encryption best practices, security news, and product updates delivered to your inbox.
+                Get a detailed overview of how EncryptKey integrates with your existing payment infrastructure including HSM compatibility, key loading procedures, and compliance documentation ready for your QSA.
               </p>
             </div>
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
-              Enterprise Grade encryption for modern payment systems. Secure, scalable, and compliant.
+              Centralised encryption key management for payment infrastructure. Built for institutions where key security is non-negotiable.
             </p>
             <div className="flex items-center gap-4">
               <a

@@ -16,50 +16,50 @@ import featureImage4 from '@/assets/featureImage.jpg';
 const mainFeatures = [
   {
     icon: Lock,
-    title: 'Centralized Encryption Services',
-    description: 'Centralized encryption services that integrate seamlessly into existing payment flows. Consolidate all cryptographic operations into a single, secure service layer.',
+    title: 'Centralised Encryption Key Management',
+    description: 'One governed platform manages the full encryption key lifecycle across every system in your payment stack. Individual applications no longer own or store key material. EncryptKey enforces cryptographic policy once and applies it consistently across card systems, switches, processors, and partner integrations.',
     image: featureImage1,
     benefits: [
-      'Single point of encryption management',
-      'Consistent security policies across all systems',
-      'Reduced attack surface',
-      'Simplified audit trails'
+      'Single key management policy across all payment systems',
+      'No key material stored or managed at the application layer',
+      'Reduced attack surface cryptographic operations consolidated',
+      'Consistent security posture across all channels and partners'
     ]
   },
   {
     icon: RefreshCw,
     title: 'Automated Key Lifecycle Management',
-    description: 'Automated key lifecycle management without operational cost. From generation to rotation to retirement, every key is managed automatically.',
+    description: 'Every stage of the key lifecycle generation, approval, assignment, access, loading, rotation, and retirement is governed through controlled, automated workflows. Manual key handling is eliminated entirely, removing the operational risk and human error that regulators flag most often during audits.',
     image: featureImage2,
     benefits: [
-      'Automatic key rotation schedules',
-      'Zero-downtime key updates',
-      'Compliance-ready key archival',
-      'Hardware security module integration'
+      'Automated rotation schedules policy-triggered, zero downtime',
+      'Compliance ready key archival with verifiable chain of custody',
+      'Hardware Security Module (HSM) integration FIPS 140-2 Level 3',
+      'Certified key destruction with timestamped, regulator-ready evidence'
     ]
   },
   {
     icon: FileCode,
-    title: 'API-First Design',
-    description: 'API-first design with clear documentation and predictable behaviour. Built by developers, for developers.',
+    title: 'Clean Integration with Payment Infrastructure',
+    description: 'An API-first architecture ensures EncryptKey connects cleanly with existing payment platforms, card management systems, and processing environments without requiring system re-architecture. Integration is designed for institutions that need predictable behaviour and full operational control from day one.',
     image: featureImage3,
     benefits: [
-      'RESTful and gRPC interfaces',
-      'Comprehensive SDK support',
-      'Idempotent operations',
-      'Detailed error responses'
+      'REST and gRPC interfaces integrates with Postillion, Base24, and switching environments',
+      'Separate test and production environments provisioned independently',
+      'Predictable, consistent behaviour no side effects on live transaction flows',
+      'Comprehensive SDK and detailed API documentation for operations teams'
     ]
   },
   {
     icon: Users,
-    title: 'Access-Based Management',
-    description: 'Access-based management of key requests and approval workflows. Fine-grained permissions ensure the right people have the right access.',
+    title: 'Role Based Access & Approval Workflows',
+    description: 'Key management operations are governed by role-based access control with multi-level approval workflows built in. Custodian responsibilities are enforced by the system not dependent on staff adherence to written procedures ensuring segregation of duties is structurally maintained at all times.',
     image: featureImage4,
     benefits: [
-      'Role-based access control',
-      'Multi-level approval workflows',
-      'Audit logging for all operations',
-      'Integration with identity providers'
+      'Role based access custodian A and B permissions enforced by the platform',
+      'Multi-level approval workflows aligned to dual control requirements',
+      'Immutable audit log every operation, every role, every timestamp',
+      'Identity provider integration SSO, LDAP, and Active Directory support'
     ]
   },
 ];
@@ -67,33 +67,33 @@ const mainFeatures = [
 const additionalFeatures = [
   {
     icon: Shield,
-    title: 'End-to-End Encryption',
-    description: 'Protect data in transit and at rest with industry-standard encryption algorithms.'
+    title: 'FIPS 140-2 Key Storage',
+    description: 'Encryption keys stored exclusively in FIPS 140-2 Level 3 certified hardware security modules never in software or application memory.'
   },
   {
     icon: Database,
-    title: 'Secure Key Storage',
-    description: 'Keys are stored in FIPS 140-2 Level 3 certified hardware security modules.'
+    title: 'Sub-10ms Key Operations',
+    description: 'Key loading and cryptographic operations complete in under 10ms  no latency impact on live transaction throughput or card authorisation flows.'
   },
   {
     icon: Zap,
-    title: 'High Performance',
-    description: 'Sub-10ms latency for cryptographic operations at any scale.'
+    title: 'One-Click Audit Export',
+    description: 'Complete PCI DSS, ISO 27001, and CBN audit evidence compiled automatically and exported in formats accepted by QSAs and regulatory examiners.'
   },
   {
     icon: Eye,
     title: 'Real-Time Monitoring',
-    description: 'Monitor all cryptographic operations with detailed metrics and alerts.'
+    description: 'Live visibility into key state, lifecycle stage, and usage patterns with automated alerts for anomalies, expiry thresholds, and policy violations.'
   },
   {
     icon: Settings,
-    title: 'Custom Policies',
-    description: 'Define custom encryption policies tailored to your compliance requirements.'
+    title: 'Institution Specific Key Policies',
+    description: 'Define custom key management policies per environment, per partner, and per regulatory requirement applied consistently without manual enforcement.'
   },
   {
     icon: Server,
-    title: 'Multi-Region Support',
-    description: 'Deploy across multiple regions for data residency and disaster recovery.'
+    title: 'Multi-Region Deployment',
+    description: 'Deploy across multiple regions for data residency compliance, disaster recovery, and continuous availability required for Tier-1 banking operations.'
   },
 ];
 
@@ -113,14 +113,14 @@ const FeaturesPage: React.FC = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Designed for security teams. Trusted by operations. 
+             Built For Payment Operations.Trusted By Compliance.
           </h1>
           <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8">
-            EncryptKey centralizes encryption and key management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows.
+            EncryptKey centralises encryption key management into a single, governed service that integrates seamlessly with existing card systems, payment switches, and transaction processing environments.
           </p>
           
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-8">
-            Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems. Key lifecycles generation, approval, assignment, access, and loading are automated and governed through controlled workflows, eliminating manual handling and reducing operational overhead. Every action is logged, auditable, and aligned with regulatory expectations for dual control and segregation of duties. An API-first architecture ensures predictable behaviour and clean integration with payment platforms, switches, and processing environments.
+          Key lifecycles generation, approval, assignment, access, and loading  are automated through controlled workflows, eliminating manual handling. Every action is logged, auditable, and aligned with regulatory expectations for dual control and segregation of duties.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
@@ -212,10 +212,10 @@ const FeaturesPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              And much more
+              And Much More
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to secure your payment infrastructure
+              Everything you need to govern encryption key infrastructure across your payment environment
             </p>
           </div>
           

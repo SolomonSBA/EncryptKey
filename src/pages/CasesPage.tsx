@@ -15,62 +15,62 @@ import caseImage3 from '@/assets/Image3.jpg';
 const useCases = [
   {
     icon: CreditCard,
-    title: 'Securing Payment APIs',
-    description: 'Protect sensitive payment data with Enterprise-Grade encryption across all your API endpoints.',
+    title: 'Centralised key management for card issuance and PIN operations.',
+    description: 'Banks upgrading card management systems including Postillion, Base24, and similar platforms  require encryption keys to be managed independently of the application layer. EncryptKey provides a governed, auditable key management service that integrates into your existing card and PIN infrastructure without requiring application-level cryptographic changes.',
     image: caseImage1,
     benefits: [
-      'End-to-end encryption for card data',
-      'Tokenization for recurring payments',
-      'PCI DSS compliance automation',
-      'Real-time fraud detection integration'
+      'Key generation, assignment, and loading governed through controlled workflows',
+      'Dual control and segregation of duties enforced by policy, not by process',
+      'Integrates with Postillion PostCard DB, HSMs, and PIN processing environments',
+      'Test and production environments provisioned and mirrored independently'
     ],
     stats: [
-      { value: '99.99%', label: 'Uptime' },
-      { value: '<5ms', label: 'Latency' },
-      { value: '0', label: 'Data Breaches' }
+      { value: '< 5ms', label: 'Key Load Time' },
+      { value: 'Zero', label: 'Manual Handling' },
+      { value: 'Full', label: 'HSM Compatibility' }
     ]
   },
   {
     icon: Server,
-    title: 'Protecting sensitive data across distributed systems',
-    description: 'Ensure sensitive transaction data remains protected across internal systems, partner integrations, and third-party networks.',
+    title: 'Consistent key governance across switches, acquirers, and processors.',
+    description: 'Payment switches and processing environments operate across multiple nodes, partners, and acquiring relationships each with its own encryption boundary. EncryptKey enforces a single key management policy across all of them, eliminating the inconsistency that creates compliance gaps and breach exposure.',
     image: caseImage2,
     benefits: [
-      'Cross-system encryption consistency',
-      'Secure data sharing with partners',
-      'Audit trails for all transactions',
-      'Automated compliance reporting'
+      'Single policy applied across all transaction nodes and partner integrations',
+      'Complete key audit trail from generation to destruction regulator ready',
+      'Structured key zoning: separate key domains per environment, partner, and channel',
+      'ISO 8583 compatible no disruption to existing transaction message flows'
     ],
     stats: [
-      { value: '500M+', label: 'Transactions/Day' },
-      { value: '50+', label: 'Integrations' },
-      { value: '100%', label: 'Compliance' }
+      { value: 'One', label: 'Policy Across All Environments' },
+      { value: 'Full', label: 'Audit Trail Per Key Lifecycle' },
+      { value: 'Zero', label: 'Key sprawl' }
     ]
   },
   {
     icon: FileCheck,
-    title: 'Simplifying PCI and regulatory compliance',
-    description: 'Reduce PCI DSS scope and simplify compliance with centralized encryption and key management.',
+    title: 'Audit Ready Key Management, Built For PCI DSS And CBN Requirements.',
+    description: 'Regulatory examiners and PCI QSAs require demonstrable evidence that cryptographic keys are generated, stored, distributed, and destroyed under controlled, documented conditions. EncryptKey produces that evidence automatically every action logged, every workflow enforced, every key state accounted for.',
     image: caseImage3,
     benefits: [
-      'Reduced PCI scope by 80%',
-      'Automated compliance documentation',
-      'Continuous monitoring and alerts',
-      'Expert compliance support'
+      'Automated audit logs structured for PCI DSS 4.0, ISO 27001, and CBN Guidelines',
+      'Dual control workflows eliminate reliance on manual procedures or policy documents',
+      'Key custodian roles enforced in the system not left to spreadsheets and ceremony',
+      'One-click QSA audit package export evidence compiled automatically'
     ],
     stats: [
-      { value: '80%', label: 'Scope Reduction' },
-      { value: '60%', label: 'Cost Savings' },
-      { value: '2 weeks', label: 'Audit Time' }
+      { value: 'PCI DSS 4.0', label: 'Aligned' },
+      { value: 'ISO 27001', label: 'Aligned' },
+      { value: 'CBN', label: 'Compliant Ready' }
     ]
   },
 ];
 
 const industries = [
-  { icon: Building2, name: 'Financial Services', description: 'Banks, credit unions, and investment firms' },
-  { icon: CreditCard, name: 'Payment Processors', description: 'PSPs, acquirers, and payment gateways' },
-  { icon: Globe, name: 'E-Commerce', description: 'Online retailers and marketplaces' },
-  { icon: Users, name: 'Healthcare', description: 'HIPAA-compliant data protection' },
+  { icon: Building2, name: 'Issuing Banks', description: 'Card key management, PIN generation, and HSM integration for card issuance programmes operating at scale.' },
+  { icon: CreditCard, name: 'Payment Processors', description: 'Key governance across switching environments, acquirers, and ISO 8583 transaction flows under one policy.' },
+  { icon: Globe, name: 'Commercial Banks', description: 'Centralised key policy for retail banking channels ATM, POS, mobile, and online from a single governed platform.' },
+  { icon: Users, name: 'Payment Switches', description: 'Managed key zones for multi-party switching, interbank settlement flows, and partner-level key isolation.' },
 ];
 
 const CasesPage: React.FC = () => {
@@ -89,10 +89,10 @@ const CasesPage: React.FC = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Use Cases
+            Encryption key management for every layer of your payment infrastructure.
           </h1>
           <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            EncryptKey enables organizations to enforce consistent cryptographic controls without slowing down operations or development velocity.
+            From card issuance to transaction switching, EncryptKey centralises key lifecycle management across your entire payment stack  without rewriting a single application.
           </p>
         </div>
       </section>
@@ -102,10 +102,10 @@ const CasesPage: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
-              By centralizing encryption and key lifecycle management into a dedicated platform, EncryptKey removes the need for individual teams to design, implement, and maintain cryptographic logic within each application. Security policies are applied uniformly across payment systems, processing environments, and partner integrations, reducing inconsistency and human error.
+              By centralising key lifecycle management into a dedicated, governed platform, EncryptKey removes the need for individual teams to design, implement, and maintain cryptographic key logic within each application. Key policies are enforced uniformly across card systems, processing environments, and partner integrations reducing operational risk and eliminating manual handling.
             </p>
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mt-6">
-              Operational teams gain confidence through clear audit trails and controlled access, while security teams retain oversight without becoming bottlenecks. Developers continue to build and deploy at speed, without direct exposure to sensitive key material or cryptographic complexity.
+              Operational teams gain complete audit visibility through controlled access workflows, while security teams retain oversight without becoming bottlenecks. Payment systems continue to run at full velocity  without direct exposure to key material or cryptographic complexity.
             </p>
           </div>
         </div>
@@ -177,10 +177,10 @@ const CasesPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Trusted across industries
+              Built For Payment Infrastructure. Not Adapted For It.
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From financial services to healthcare, organizations trust EncryptKey for their encryption needs
+              EncryptKey is purpose built for environments where key management failure is not recoverable payment switches, card management systems, acquiring platforms, and core banking integrations. It is not a general purpose security tool retrofitted for financial services.
             </p>
           </div>
           
@@ -208,14 +208,14 @@ const CasesPage: React.FC = () => {
             <div className="absolute top-6 left-8 text-6xl text-encrypt-blue/30 font-serif">"</div>
             <blockquote className="relative z-10">
               <p className="text-xl lg:text-2xl text-foreground leading-relaxed mb-6">
-                EncryptKey transformed how we handle payment security. What used to take our team weeks to implement now takes hours, and we have complete confidence in our compliance posture.
+                "Financial institutions using EncryptKey eliminate manual key handling ceremonies replacing them with automated, policy enforced workflows that satisfy PCI DSS dual control requirements on day one."
               </p>
               <footer className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-encrypt-blue to-encrypt-magenta flex items-center justify-center text-white font-bold">
-                  JD
+                  {/* Head of Cards & Payment Infrastructure  */}
                 </div>
                 <div>
-                  <div className="text-foreground font-medium">James Davidson</div>
+                  <div className="text-foreground font-medium">Commercial Bank</div>
                   {/* <div className="text-muted-foreground text-sm">CTO, SecurePay Inc.</div> */}
                 </div>
               </footer>
@@ -233,10 +233,10 @@ const CasesPage: React.FC = () => {
             
             <div className="relative px-8 py-16 lg:px-16 lg:py-24 text-center">
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
-                Ready to secure your infrastructure?
+                Ready to integrate?
               </h2>
               <p className="text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Join leading organizations that trust EncryptKey for their encryption needs.
+                Join leading payment institutions that trust EncryptKey to govern their encryption key infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
@@ -252,7 +252,7 @@ const CasesPage: React.FC = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6"
+                  className="w-full sm:w-auto border-white/30 text-encrypt-blue hover:bg-white/10 text-lg px-8 py-6"
                   asChild
                 >
                   <Link to="/contact">Get in Touch</Link>

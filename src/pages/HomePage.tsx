@@ -44,7 +44,7 @@ const stats = [
 
 const heroProofStrip = [
   { value: '99.999%', label: 'Uptime SLA' },
-  { value: 'AES-256', label: 'Key Management' },
+  { value: 'HSM', label: 'Key Management' },
   { value: 'PCI DSS L1', label: 'Compliant' },
 ];
 
@@ -74,7 +74,7 @@ const HomePage: React.FC = () => {
               </h1>
               
               <p className="text-lg lg:text-xl text-muted-foreground mb-4 max-w-xl mx-auto lg:mx-0 animate-slide-in font-sans" style={{ animationDelay: '0.1s', fontFamily: 'var(--font-body, "DM Sans", sans-serif)' }}>
-                EncryptKey provides AES-256 encryption as a service for financial institutions and payment platforms operating in regulated, high-availability environments.
+                EncryptKey provides HSM encryption as a service for financial institutions and payment platforms operating in regulated, high-availability environments.
               </p>
               <div className="hero-stats flex flex-wrap gap-0 mt-10 pt-8 border-t border-border animate-slide-in" style={{ animationDelay: '0.12s' }}>
                 {heroProofStrip.map((item, i) => (
@@ -164,10 +164,12 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4">
-              Designed for security teams. Trusted by operations.
+              Built For Payment Operations.Trusted By Compliance.
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Centralized encryption and key lifecycle management that integrates with your payment and transaction flows.
+              Centralized Encryption Keys Management
+Encryption key services that integrate seamlessly into existing payment flows.
+ 
             </p>
           </div>
           
@@ -207,7 +209,7 @@ const HomePage: React.FC = () => {
                 A security foundation that scales
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                EncryptKey centralizes encryption and key lifecycle management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows. Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems—reducing operational risk, simplifying regulatory compliance, and ensuring sensitive payment data remains protected.
+                EncryptKey centralizes encryption and key lifecycle management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows. Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems reducing operational risk, simplifying regulatory compliance, and ensuring sensitive payment data remains protected.
               </p>
               
               <ul className="space-y-4 mb-8">
@@ -266,7 +268,7 @@ const HomePage: React.FC = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6"
+                  className="w-full sm:w-auto border-white/30 text-gray hover:bg-white/10 text-lg px-8 py-6"
                   asChild
                 >
                   <Link to="/contact">Get in Touch</Link>
