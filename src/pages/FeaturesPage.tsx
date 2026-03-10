@@ -113,7 +113,7 @@ const FeaturesPage: React.FC = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-             Built For Payment Operations.Trusted By Compliance.
+             Built For Payment Operations. Trusted By Compliance.
           </h1>
           <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8">
             EncryptKey centralises encryption key management into a single, governed service that integrates seamlessly with existing card systems, payment switches, and transaction processing environments.

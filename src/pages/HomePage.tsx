@@ -141,7 +141,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Trusted By Section */}
-      <section className="py-16 lg:py-20">
+      {/* <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-muted-foreground text-sm uppercase tracking-wider mb-8">
             Trusted by leading financial institutions
@@ -157,18 +157,17 @@ const HomePage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Features Section */}
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4">
-              Built For Payment Operations.Trusted By Compliance.
+              Built For Payment Operations. Trusted By Compliance.
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Centralized Encryption Keys Management
-Encryption key services that integrate seamlessly into existing payment flows.
+              Centralized Encryption Keys Management Encryption key services that integrate seamlessly into existing payment flows.
  
             </p>
           </div>
