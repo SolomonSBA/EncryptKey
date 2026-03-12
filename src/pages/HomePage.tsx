@@ -15,8 +15,8 @@ import featureImage from '@/assets/featureImage.jpg';
 const features = [
   {
     icon: Lock,
-    title: 'Centralized Encryption',
-    description: 'Encryption services that integrate seamlessly into existing payment flows.',
+    title: 'Centralized Encryption Keys Management',
+    description: 'Encryption key services that integrate seamlessly into existing payment flows.',
   },
   {
     icon: Key,
@@ -74,7 +74,7 @@ const HomePage: React.FC = () => {
               </h1>
               
               <p className="text-lg lg:text-xl text-muted-foreground mb-4 max-w-xl mx-auto lg:mx-0 animate-slide-in font-sans" style={{ animationDelay: '0.1s', fontFamily: 'var(--font-body, "DM Sans", sans-serif)' }}>
-                EncryptKey provides HSM encryption as a service for financial institutions and payment platforms operating in regulated, high-availability environments.
+                EncryptKey provides HSM encryption key management for financial institutions and payment platforms operating in regulated, high-availability environments.
               </p>
               <div className="hero-stats flex flex-wrap gap-0 mt-10 pt-8 border-t border-border animate-slide-in" style={{ animationDelay: '0.12s' }}>
                 {heroProofStrip.map((item, i) => (
@@ -167,7 +167,7 @@ const HomePage: React.FC = () => {
               Built For Payment Operations. Trusted By Compliance.
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Centralized Encryption Keys Management Encryption key services that integrate seamlessly into existing payment flows.
+              Centralized encryption key services that integrate seamlessly into existing payment flows.
  
             </p>
           </div>
@@ -208,7 +208,7 @@ const HomePage: React.FC = () => {
                 A security foundation that scales
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                EncryptKey centralizes encryption and key lifecycle management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows. Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems reducing operational risk, simplifying regulatory compliance, and ensuring sensitive payment data remains protected.
+                EncryptKey centralizes key lifecycle management into a single, dedicated service that integrates seamlessly with existing payment and transaction flows. Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems. Key lifecycles generation, approval, assignment, access, and loading are automated and governed through controlled workflows, eliminating manual handling and reducing operational overhead. Every action is logged, auditable, and aligned with regulatory expectations for dual control and segregation of duties.
               </p>
               
               <ul className="space-y-4 mb-8">

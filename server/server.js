@@ -70,6 +70,63 @@ function getTransporter() {
 const contactTo = env('CONTACT_TO_EMAIL') || env('SMTP_USER');
 const newsletterTo = env('NEWSLETTER_TO_EMAIL') || contactTo;
 
+function escapeHtml(input = '') {
+  return String(input)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function nl2br(input = '') {
+  return escapeHtml(input).replace(/\n/g, '<br />');
+}
+
+function buildEmailLayout({ title, subtitle, rows }) {
+  const rowHtml = rows
+    .filter((r) => r.value)
+    .map(
+      (r) => `
+        <tr>
+          <td style="padding:8px 0;color:#6b7280;font-size:13px;width:160px;vertical-align:top;">${escapeHtml(r.label)}</td>
+          <td style="padding:8px 0;color:#111827;font-size:14px;font-weight:500;vertical-align:top;">${r.value}</td>
+        </tr>
+      `
+    )
+    .join('');
+
+  return `
+    <!doctype html>
+    <html>
+      <body style="margin:0;padding:0;background:#f3f4f6;font-family:Arial,Helvetica,sans-serif;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="padding:24px 12px;">
+          <tr>
+            <td align="center">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:680px;background:#ffffff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
+                <tr>
+                  <td style="padding:18px 24px;background:linear-gradient(90deg,#2628DD,#C419BE);color:#ffffff;">
+                    <div style="font-size:18px;font-weight:700;letter-spacing:0.2px;">EncryptKey</div>
+                    <div style="font-size:13px;opacity:0.95;margin-top:4px;">${escapeHtml(subtitle)}</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:22px 24px;">
+                    <h2 style="margin:0 0 14px;font-size:18px;color:#111827;">${escapeHtml(title)}</h2>
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                      ${rowHtml}
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </body>
+    </html>
+  `;
+}
+
 // Contact handler (used for both /api/contact and /contact when app is mounted at /api)
 async function handleContact(req, res) {
   try {
@@ -85,12 +142,24 @@ async function handleContact(req, res) {
       '',
       (message || '').trim(),
     ].join('\n');
+    const html = buildEmailLayout({
+      title: 'New Contact Form Submission',
+      subtitle: 'Website contact request',
+      rows: [
+        { label: 'Name', value: escapeHtml(`${firstName || ''} ${lastName || ''}`.trim()) },
+        { label: 'Email', value: escapeHtml(email || '') },
+        { label: 'Company', value: escapeHtml(company || '') },
+        { label: 'Reason', value: escapeHtml(reason || '') },
+        { label: 'Message', value: nl2br((message || '').trim()) },
+      ],
+    });
     await transporter.sendMail({
       from: env('SMTP_USER'),
       to: contactTo,
       replyTo: email || undefined,
       subject,
       text,
+      html,
     });
     console.log('Contact email sent to', contactTo);
     res.status(200).json({ ok: true });
@@ -114,6 +183,11 @@ async function handleNewsletter(req, res) {
       replyTo: email,
       subject: 'EncryptKey website – Newsletter signup',
       text: `New newsletter signup: ${email}`,
+      html: buildEmailLayout({
+        title: 'New Newsletter Signup',
+        subtitle: 'Website newsletter request',
+        rows: [{ label: 'Subscriber Email', value: escapeHtml(email) }],
+      }),
     });
     res.status(200).json({ ok: true });
   } catch (e) {

@@ -85,7 +85,7 @@ const CasesPage: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border mb-6">
             <Shield className="w-4 h-4 text-encrypt-magenta" />
-            <span className="text-sm text-gray-300">Use Cases</span>
+            <span className="text-sm text-gray-600">Use Cases</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">

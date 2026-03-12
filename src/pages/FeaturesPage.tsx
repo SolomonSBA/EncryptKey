@@ -120,7 +120,7 @@ const FeaturesPage: React.FC = () => {
           </p>
           
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-8">
-          Key lifecycles generation, approval, assignment, access, and loading  are automated through controlled workflows, eliminating manual handling. Every action is logged, auditable, and aligned with regulatory expectations for dual control and segregation of duties.
+          Rather than embedding cryptography into individual applications, organizations enforce security policies once and apply them consistently across systems. Key lifecycles generation, approval, assignment, access, and loading are automated and governed through controlled workflows, eliminating manual handling and reducing operational overhead. Every action is logged, auditable, and aligned with regulatory expectations for dual control and segregation of duties.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
